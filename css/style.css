@@ -1,34 +1,72 @@
-/* Container centralizado para a atividade */
-.container-gravador {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: #222;
+    color: white;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+/* Container do Grid */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+/* Cards */
+.card {
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
 }
 
-/* Estilos do botão fornecidos por você */
-#btn-gravador {
-    padding: 15px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    user-select: none; /* Evita seleção de texto ao segurar */
-    transition: background-color 0.2s;
+/* Conteúdo dos cards */
+.card-conteudo {
+    text-align: center;
 }
 
-/* Efeito visual quando o botão for clicado/segurado */
-#btn-gravador:active {
-    background-color: #2980b9;
+/* Tablet */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-/* Estilos do status fornecidos por você */
-#status-gravacao {
-    font-weight: bold;
-    margin-top: 15px;
-    color: #555;
+/* Celular */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 400px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 }
