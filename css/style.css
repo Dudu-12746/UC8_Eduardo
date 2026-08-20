@@ -1,34 +1,237 @@
-/* Container centralizado para a atividade */
-.container-gravador {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+/* ========================================
+   MUNDO DISNEY
+   CSS COMPLETO
+======================================== */
+
+/* ---------- CONFIGURAÇÕES GERAIS ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #f4f8ff 0%, #ffffff 100%);
+    color: #222;
+    min-height: 100vh;
 }
 
-/* Estilos do botão fornecidos por você */
-#btn-gravador {
-    padding: 15px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #3498db;
+
+/* ---------- FONTE ESTILO DISNEY ---------- */
+
+/* 
+   Coloque sua fonte dentro de:
+   fontes/waltograph.ttf
+*/
+
+@font-face {
+    font-family: "Waltograph";
+    src: url("fontes/waltograph.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ---------- CABEÇALHO ---------- */
+
+header {
+    text-align: center;
+    padding: 40px 20px 30px;
+    background: linear-gradient(135deg, #0066cc, #4da6ff);
     color: white;
-    border: none;
-    border-radius: 5px;
-    user-select: none; /* Evita seleção de texto ao segurar */
-    transition: background-color 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Efeito visual quando o botão for clicado/segurado */
-#btn-gravador:active {
-    background-color: #2980b9;
+header h1 {
+    font-family: "Waltograph", "Pacifico", cursive;
+    font-size: 58px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos do status fornecidos por você */
-#status-gravacao {
+header p {
+    font-size: 18px;
     font-weight: bold;
-    margin-top: 15px;
+}
+
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ---------- MENSAGEM ---------- */
+
+#mensagem {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 18px;
+    font-weight: bold;
     color: #555;
+}
+
+
+/* ---------- GRID DOS PERSONAGENS ---------- */
+
+#characters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px 0 40px;
+}
+
+
+/* ---------- CARD ---------- */
+
+.card {
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5e5e5;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ---------- IMAGEM DO CARD ---------- */
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    display: block;
+    background: #f5f8ff;
+    padding: 15px;
+}
+
+
+/* ---------- CONTEÚDO DO CARD ---------- */
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card h2 {
+    font-family: "Waltograph", "Pacifico", cursive;
+    color: #0066cc;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* ---------- BOTÃO ---------- */
+
+#botaoCarregar {
+    display: block;
+    margin: 10px auto 40px;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #0066cc, #338fff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 12px rgba(0, 102, 204, 0.3);
+}
+
+#botaoCarregar:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #0052a3, #1f7de0);
+}
+
+#botaoCarregar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ---------- RODAPÉ ---------- */
+
+footer {
+    background: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+/* Tablets */
+
+@media (max-width: 900px) {
+
+    #characters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* Celulares */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    #characters {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card img {
+        height: 230px;
+    }
+
+    .card h2 {
+        font-size: 25px;
+    }
+
+    #botaoCarregar {
+        width: 90%;
+    }
 }

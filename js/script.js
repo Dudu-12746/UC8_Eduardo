@@ -1,16 +1,82 @@
-// Seleção dos elementos do HTML
-const btnGravador = document.getElementById("btn-gravador");
-const statusGravacao = document.getElementById("status-gravacao");
+const apiUrl = 'https://api.disneyapi.dev/character';
 
-const textoOriginal = btnGravador.innerHTML;
+const characters = document.getElementById('characters');
+const botaoCarregar = document.getElementById('botaoCarregar');
+const mensagem = document.getElementById('mensagem');
 
-btnGravador.addEventListener("mousedown", () => {
-    btnGravador.style.backgroundColor = "#e74c3c";
-    btnGravador.innerHTML = " 🔴 Gravando... Não solte!";
-    statusGravacao.textContent = "Status: Capturando áudio... "
+let paginaAtual = 1;
+const limite = 6;
+
+/* FUNÇÃO PARA CARREGAR OS PERSONAGENS */
+function carregarPersonagens() {
+
+    botaoCarregar.disabled = true;
+    mensagem.textContent = 'Carregando personagens...';
+
+    const url = `${apiUrl}?page=${paginaAtual}&pageSize=${limite}`;
+
+    fetch(url)
+
+        .then(function (resposta) {
+            return resposta.json();
+        })
+
+        .then(function (resultado) {
+
+            resultado.data.forEach(function (personagem) {
+                criarCard(personagem);
+            });
+
+            mensagem.textContent = '';
+
+            paginaAtual++;
+
+            botaoCarregar.disabled = false;
+
+            // Se não houver próxima página, esconde o botão
+            if (!resultado.info.nextPage) {
+                botaoCarregar.style.display = 'none';
+            }
+
+        })
+
+        .catch(function (erro) {
+
+            console.error('Erro ao carregar personagens:', erro);
+
+            mensagem.textContent =
+                'Não foi possível carregar os personagens.';
+
+            botaoCarregar.disabled = false;
+        });
+}
+
+
+/* FUNÇÃO PARA CRIAR O CARD DE CADA PERSONAGEM */
+function criarCard(personagem) {
+
+    const card = document.createElement('div');
+
+    card.classList.add('card');
+
+    card.innerHTML = `
+        <img
+            src="${personagem.imageUrl}"
+            alt="${personagem.name}"
+        >
+
+        <h2>${personagem.name}</h2>
+    `;
+
+    characters.appendChild(card);
+}
+
+
+/* BOTÃO PARA CARREGAR MAIS PERSONAGENS */
+botaoCarregar.addEventListener('click', function () {
+    carregarPersonagens();
 });
-btnGravador.addEventListener("mouseup", () => {
-    btnGravador.style.backgroundColor = "#3498db";
-    btnGravador.innerHTML = " Clique e Segure para grava  ";
-    statusGravacao.textContent = "Status: Gravacao concluida com sucesso  "
-});
+
+
+/* CARREGA OS PRIMEIROS PERSONAGENS AO ABRIR A PÁGINA */
+carregarPersonagens();
