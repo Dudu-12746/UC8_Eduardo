@@ -37,7 +37,7 @@ Missao-117/
 | `style.css`  |  Responsável pelo visual da página, organização dos cards e layout.|                                                              |
 | `script.js`  |  Responsável pela integração com a API, carregamento dos personagens e interação com a página.                                                             
 | `README.md`  | Contém a documentação e as informações sobre o projeto. |                                                                |
-
+| 
 > **Caso seu projeto possua outras pastas ou arquivos, apresente-os também na estrutura acima.**
 
 ---

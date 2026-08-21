@@ -1,0 +1,59 @@
+{
+
+  "name": "Mundo Disney",
+
+  "short_name": "Disney",
+
+  "description": "Explore os personagens do universo Disney.",
+
+  "start_url": "/UC8_Eduardo/",
+
+  "scope": "/UC8_Eduardo/",
+
+  "id": "/UC8_Eduardo/",
+
+  "display": "standalone",
+
+  "background_color": "#121212",
+
+  "theme_color": "#121212",
+
+  "lang": "pt-BR",
+
+  "orientation": "portrait",
+
+  
+    "icons": [
+      {
+           "src": "img/icone-48x48.png",
+           "sizes": "48x48",
+           "type": "image/png"
+      },
+      {
+           "src": "img/icone-72x72.png",
+           "sizes": "72x72",
+           "type": "image/png"
+      },
+      {
+           "src": "img/icone-96x96.png",
+           "sizes": "96x96",
+           "type": "image/png"
+      },
+      {
+           "src": "img/icone-144x144.png",
+           "sizes": "144x144",
+           "type": "image/png"
+      },
+      {
+           "src": "img/icone-192x192.png",
+           "sizes": "192x192",
+           "type": "image/png"
+      },
+      {
+           "src": "img/icone-512x512.png",
+           "sizes": "512x512",
+           "type": "image/png"
+      }
+
+
+  ]}
