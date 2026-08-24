@@ -1,0 +1,579 @@
+h1 {
+  color: rgb(236, 234, 234);
+  text-align: center;
+  font-size: 90px;
+  font-weight: 900;
+}
+h2 {
+  color: rgb(235, 231, 231);
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+  
+}
+h3 {
+  color: rgb(32, 28, 28);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+}
+p {
+  font-size: 20px;
+  text-align: center;
+  color: rgb(43, 43, 46);
+}
+
+.texto {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+.div-sua-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+.logo img {
+  width: 150px;
+
+}
+/*seleto universal para aplicar estilos a todos los elementos*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/fundo.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6; /* Ajuste aqui a opacidade (0 a 1) */
+    z-index: -1;
+    
+}
+header{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*separa os elementos do header*/
+
+}
+nav a{
+    color: rgb(33, 56, 52);
+    text-decoration: none;/*remove o sublinhado dos links*/
+    margin-left: 50px;
+    font-weight:bold;/*deixa os links em negrito*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+nav a:hover{
+    color: #7ecee29d;/*muda a cor do link quando o mouse passa por cima*/
+    
+}
+
+
+section{
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;    
+}
+section h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+
+form{
+    padding: 30px;
+    border-radius: 10px;
+     box-shadow: 0 4px 6px rgba(221, 4, 4, 0.534);
+     display: flex;
+     flex-direction: column;/*organiza os elementos em coluna*/
+      gap: 20px;
+     
+
+}
+
+
+.botoes{
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+
+}
+button{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+footer{
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover{
+    color: #ff6600;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.card{
+    width: 250px;
+    background: #ebe8e8;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3{
+    margin: 15px 0;
+}
+
+.card p{
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.categoria img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.categoria:hover img{
+    transform: scale(1.1);
+}
+
+.categoria h3{
+    bottom: 20px;
+    left: 50%;
+    
+    color: rgb(247, 241, 241);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.rodape{
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 100px;
+}
+
+.rodape h3{
+    margin-bottom: 15px;
+}
+
+.redes{
+    margin: 20px 0;
+}
+
+.redes a{
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.redes a:hover{
+    color: #999;
+}
+
+.copy{
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+
+
+.imagem-produto img{
+    width: 500px;
+    border-radius: 10px;
+}
+
+
+.info-produto h1{
+    font-size: 45px;
+}
+
+.info-produto h2{
+    font-size: 35px;
+}
+
+.tamanhos{
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tamanhos button{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.comprar{
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+h1{
+    text-align: center;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #222;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.item img{
+    width: 120px;
+    border-radius: 10px;
+}
+
+.info{
+    flex: 1;
+    margin-left: 20px;
+}
+
+button{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.total{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.finalizar{
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.conta {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.conta h1 {
+    margin-bottom: 20px;
+}
+.conta form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.conta input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.conta button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.voltar {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #000, #444);
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.pesquisa-container{
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.barra-pesquisa{
+    width: 400px;
+    max-width: 90%;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+}
+
+.btn-pesquisa{
+    padding: 15px 25px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.produto h3{
+    font-size: 24px;
+    color: rgb(19, 18, 18);
+}
+
+.produto p{
+    color: rgb(209, 204, 204);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+.grid-container, .resultados{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 50%;
+    margin: 40px auto;
+}
+
+.card,.produto{
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img,.produto img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+
+
+
+section{
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;    
+}
+section h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+
+
+form{
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 10px;
+     box-shadow: 0 4px 6px rgba(221, 4, 4, 0.534);
+     display: flex;
+     flex-direction: column;/*organiza os elementos em coluna*/
+      gap: 20px;
+     
+
+}
+input,textarea{
+    padding: 15px;
+    border: 1px solid rgb(223, 220, 220);
+    border-radius: 5px;
+}
+textarea{
+    min-height: 120px;
+    resize: vertical;
+}
+.botoes{
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+
+}
+button{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+#btnLimpa{
+    background-color: rgb(245, 20, 4);
+}
+#btnEnviar{
+    background-color: rgb(4, 255, 171);
+}
+footer{
+    background-color: #1d1c1c6e;
+    color: rgb(219, 210, 210);;
+    text-align: center;
+    padding: 10px;
+}
+.sobre{
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 40px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.sobre h1{
+    color: white;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.sobre p{
+    color: white;
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.btn-voltar{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn-voltar:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+.faq{
+    text-align: center;
+    border-radius: 10px;
+    height: 500px;
+    color: #f0ecec;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.card-favorito {
+    text-align: center;
+}
+
+.card-favorito img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+body{
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+
+.info{
+    flex: 1;
+}
+
+h1{
+    margin-top: 0;
+}
+
+.preco{
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.descricao{
+    margin: 20px 0;
+}
+
+button{
+    background: black;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover{
+    background: #333;
+}
